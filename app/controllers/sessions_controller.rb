@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
-      redirect_to user_path(user.id)
+      redirect_to links_path
     else
       flash[:error] = "Invalid login credentials. Please try again or create a new account."
       redirect_to login_path

@@ -12,7 +12,7 @@ RSpec.describe "root page" do
     within 'main' do
       click_on "Login"
     end
-    expect(current_path).to eq user_path(user.id)
+    expect(current_path).to eq links_path
     expect(page).to have_text ("Welcome, #{user.username}!")
 
     click_on "Logout"
