@@ -1,8 +1,10 @@
-Url: <%= link.url %>
-Title: <%= link.title %>
-Status:
-  <% if link.read == true %>
-    <span> Read </span>
-  <% else  %>
-    <span> Unread </span>
-  <% end %>
+<div class="link" data-id=<%= link.id %>>
+  Url: <%= link.url %>
+  Title: <%= link.title %>
+  Status:
+    <% if link.read == true %>
+      <span class="status"> Read </span>
+    <% else  %>
+      <span class="status"> Unread </span>
+    <% end %>
+</div>

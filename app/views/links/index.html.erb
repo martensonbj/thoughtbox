@@ -20,9 +20,7 @@
 
 <% if @links %>
   <% @links.each do |link| %>
-    <div class="link">
       <%= render partial: 'link', locals: { link: link} %>
-    </div>
   <% end %>
 <% else  %>
   <p>

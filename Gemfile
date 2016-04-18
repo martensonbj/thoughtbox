@@ -10,6 +10,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'figaro'
 gem 'pg'
 gem 'react-rails'
+gem 'responders'
 
 group :development, :test do
   gem 'byebug'
