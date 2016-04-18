@@ -1,6 +1,7 @@
 $(document).ready(function(){
   showReadLinks();
   showUnreadLinks();
+  showAllLinks();
 });
 
 function showReadLinks(){
@@ -30,5 +31,11 @@ function showUnreadLinks(){
         $link.show();
       }
     });
+  });
+}
+
+function showAllLinks(){
+  $('#show-all').on('click', function(){
+    $('.link').show();
   });
 }
