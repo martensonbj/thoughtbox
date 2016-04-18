@@ -1,0 +1,20 @@
+<nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Thought Box</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><%= link_to 'Home', root_path %></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <% if current_user %>
+              <li>Welcome, <%= current_user.username %>!</li>
+              <li><%= link_to 'Logout', logout_path, method: :delete%></li>
+            <% else %>
+              <li><%= link_to 'Login', login_path %></li>
+            <% end %>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>

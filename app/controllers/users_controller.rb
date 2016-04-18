@@ -7,9 +7,10 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to @user
+      redirect_to links_path
     else
-      # redirect_to new_user_path
+      redirect_to new_user_path
+      flash[:error] = "Please fill in all fields."
     end
   end
 
@@ -20,7 +21,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :username, :password)
+    params.require(:user).permit(:email, :username, :password)
   end
 
 end

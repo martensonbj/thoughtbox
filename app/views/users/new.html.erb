@@ -1,12 +1,8 @@
 <h2>Create an Account</h2>
 <%= form_for(@user) do |f| %>
 
-  <%= f.label :first_name, "First Name" %>
-  <%= f.text_field :first_name  %>
-  <br>
-
-  <%= f.label :last_name, "Last Name" %>
-  <%= f.text_field :last_name  %>
+  <%= f.label :email, "Email Address" %>
+  <%= f.text_field :email  %>
   <br>
 
   <%= f.label :username %>
@@ -17,5 +13,5 @@
   <%= f.password_field :password %>
   <br>
 
-  <%= f.submit "Create an Account",  class: "wave-effect waves-light btn" %>
+  <%= f.submit "Create an Account",  class: "btn" %>
 <% end  %>

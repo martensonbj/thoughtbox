@@ -11,9 +11,13 @@ class SessionsController < ApplicationController
       redirect_to user_path(user.id)
     else
       flash[:error] = "Invalid login credentials. Please try again or create a new account."
-      redirect_to root_path
+      redirect_to login_path
     end
   end
 
+  def destroy
+    session.clear
+    redirect_to root_path
+  end
 
 end
