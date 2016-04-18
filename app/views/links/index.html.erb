@@ -1,6 +1,25 @@
 <h1>Links Index Page</h1>
 
+<%= form_for(@link, url: links_path) do |f| %>
+
+  <%= f.label :url, "Link Url" %>
+  <%= f.text_field :url  %>
+  <br>
+
+  <%= f.label :title, "Link Title" %>
+  <%= f.text_field :title%>
+  <br>
+
+  <%= f.submit "Submit Link",  class: "btn" %>
+<% end  %>
+
 <% @links.each do |link| %>
   Url: <%= link.url %>
   Title: <%= link.title %>
+  Status:
+    <% if link.read == true %>
+      <span> Read </span>
+    <% else  %>
+      <span> Unread </span>
+    <% end %>
 <% end %>
