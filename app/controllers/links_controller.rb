@@ -2,8 +2,8 @@ class LinksController < ApplicationController
   before_action :require_user, only: [:index]
 
   def index
-    @links = Link.all
     @link = Link.new
+    @links = Link.where(user_id: current_user.id)
   end
 
   def create
@@ -12,8 +12,8 @@ class LinksController < ApplicationController
       redirect_to links_path
       flash[:success] = "Link Saved!"
     else
+      flash.now[:error] = "Please fill in all fields."
       redirect_to links_path
-      flash[:error] = "Please fill in all fields."
     end
   end
 
@@ -25,7 +25,7 @@ class LinksController < ApplicationController
   end
 
   def link_params
-    params.require(:link).permit(:url, :title)
+    params.require(:link).permit(:url, :title, :user_id)
   end
 
 end

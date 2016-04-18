@@ -1,6 +1,7 @@
 <h1>Links Index Page</h1>
 
 <%= form_for(@link, url: links_path) do |f| %>
+  <%= render 'error_messages', object: f.object %>
 
   <%= f.label :url, "Link Url" %>
   <%= f.text_field :url  %>
@@ -8,18 +9,23 @@
 
   <%= f.label :title, "Link Title" %>
   <%= f.text_field :title%>
+
+  <%= f.hidden_field :response_viddeo, :value => @recorded_image, id: "image" %>
   <br>
+
+  <%= f.hidden_field :user_id, :value => current_user.id %>
 
   <%= f.submit "Submit Link",  class: "btn" %>
 <% end  %>
 
-<% @links.each do |link| %>
-  Url: <%= link.url %>
-  Title: <%= link.title %>
-  Status:
-    <% if link.read == true %>
-      <span> Read </span>
-    <% else  %>
-      <span> Unread </span>
-    <% end %>
+<% if @links %>
+  <% @links.each do |link| %>
+    <div class="link">
+      <%= render partial: 'link', locals: { link: link} %>
+    </div>
+  <% end %>
+<% else  %>
+  <p>
+    No Links Yet!
+  </p>
 <% end %>
