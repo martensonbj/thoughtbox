@@ -19,11 +19,13 @@
 <% end  %>
 
 <% if @links %>
-  <% @links.each do |link| %>
-      <%= render partial: 'link', locals: { link: link} %>
+
+  <input type="text" placeholder="Search For Links" id="link-search"/>
+    <% @links.each do |link| %>
+        <%= render partial: 'link', locals: { link: link} %>
+    <% end %>
+  <% else  %>
+    <p>
+      No Links Yet!
+    </p>
   <% end %>
-<% else  %>
-  <p>
-    No Links Yet!
-  </p>
-<% end %>
