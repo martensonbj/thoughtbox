@@ -8,9 +8,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"></head>
 <body>
 
+<% flash.each do |key, value| %>
+  <div class="alert alert-<%= key %>">
+    <%= value %>
+  </div>
+<% end %>
+
 <% if current_user %>
   <h1>Welcome, <%= current_user.first_name %>!</h1>
 <% end %>
+
 <%= yield %>
 
 </body>
