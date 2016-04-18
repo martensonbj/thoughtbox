@@ -19,8 +19,8 @@
 <% end  %>
 
 <% if @links %>
-
   <input type="text" placeholder="Search For Links" id="link-search"/>
+  <p><span class="clickable-text" id="show-read">Read</span><span class="clickable-text" id="show-unread">Unread</span></p>
     <% @links.each do |link| %>
         <%= render partial: 'link', locals: { link: link} %>
     <% end %>
