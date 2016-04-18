@@ -17,10 +17,13 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "custom";
 
-.status {
+.clickable-text {
   cursor: pointer;
   color: blue;
   text-decoration: underline;
+}
+
+.edit-link-form {
+  display: none;
 }

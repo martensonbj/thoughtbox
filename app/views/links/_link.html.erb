@@ -1,10 +1,24 @@
 <div class="link" data-id=<%= link.id %>>
-  Url: <%= link.url %>
-  Title: <%= link.title %>
+  Url: <span class="link-url-span"><%= link.url %></span>
+  Title: <span class="link-title-span"><%= link.title %></span>
   Status:
     <% if link.read == true %>
-      <span class="status"> Read </span>
+      <span class="status clickable-text"> Read </span>
     <% else  %>
-      <span class="status"> Unread </span>
+      <span class="status clickable-text"> Unread </span>
     <% end %>
+
+    <p class="clickable-text edit-link">Edit Link</p>
+
+    <div class="edit-link-form">
+      <label>Link Url</label>
+      <input placeholder="<%= link.url %>" type="text" class="edit-link-url">
+
+      <label>Link Title</label>
+      <input placeholder="<%= link.title %>" type="text" class="edit-link-title">
+
+      <div class="edit-link-submit btn">
+        Submit Changes
+      </div>
+    </div>
 </div>
