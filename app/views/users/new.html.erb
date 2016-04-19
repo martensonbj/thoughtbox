@@ -1,17 +1,14 @@
 <h2>Create an Account</h2>
 <%= form_for(@user) do |f| %>
 
-  <%= f.label :email, "Email Address" %>
-  <%= f.text_field :email  %>
+  <%= f.text_field :email, placeholder: "email address"  %>
   <br>
 
-  <%= f.label :username %>
-  <%= f.text_field :username  %>
+  <%= f.text_field :username, placeholder: "username"  %>
   <br>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+  <%= f.password_field :password, placeholder: "password" %>
   <br>
 
-  <%= f.submit "Create an Account",  class: "btn" %>
+  <%= f.submit "Create an Account",  class: "btn new-acct-btn" %>
 <% end  %>

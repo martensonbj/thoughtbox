@@ -1,14 +1,12 @@
-<h1>Links Index Page</h1>
+<h1>Create A New Link</h1>
 
 <%= form_for(@link, url: links_path) do |f| %>
   <%= render 'error_messages', object: f.object %>
 
-  <%= f.label :url, "Link Url" %>
-  <%= f.text_field :url  %>
+  <%= f.text_field :url, placeholder: 'Link URL'  %>
   <br>
 
-  <%= f.label :title, "Link Title" %>
-  <%= f.text_field :title%>
+  <%= f.text_field :title, placeholder: 'Link Title'%>
 
   <%= f.hidden_field :response_viddeo, :value => @recorded_image, id: "image" %>
   <br>
@@ -19,13 +17,16 @@
 <% end  %>
 
 <% if @links %>
-  <input type="text" placeholder="Search For Links" id="link-search"/>
-  <p><span class="clickable-text" id="show-read">Read</span><span class="clickable-text" id="show-unread">Unread</span><span class="clickable-text" id="show-all">All</span></p>
-    <% @links.each do |link| %>
-        <%= render partial: 'link', locals: { link: link} %>
+<div id="all-links">
+    <h2>Your Links</h2>
+    <input type="text" placeholder="Search For Links" id="link-search"/>
+    <p><span class="clickable-text" id="show-read">Read</span><span class="clickable-text" id="show-unread">Unread</span><span class="clickable-text" id="show-all">All</span></p>
+      <% @links.each do |link| %>
+          <%= render partial: 'link', locals: { link: link} %>
+      <% end %>
+    <% else  %>
+      <p>
+        No Links Yet!
+      </p>
     <% end %>
-  <% else  %>
-    <p>
-      No Links Yet!
-    </p>
-  <% end %>
+</div>

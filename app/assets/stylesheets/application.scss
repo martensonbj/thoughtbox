@@ -18,10 +18,22 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body {
+  text-align: center;
+  background-color: #7D7272;
+}
+
 .clickable-text {
   cursor: pointer;
-  color: blue;
-  text-decoration: underline;
+  color: teal;
+  text-transform: uppercase;
+  font-family: Helvetica, sans-serif;
+  letter-spacing: 1px;
+  font-weight: 100;
+}
+
+span {
+  margin: 0 5px;
 }
 
 .edit-link-form {
@@ -29,5 +41,59 @@
 }
 
 .link {
-  display: block;
+    display: block;
+    border: 1px solid #aaa;
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #fff;
+}
+
+input {
+    border: none;
+    background-color: #f4f4f4;
+    padding: 10px;
+    width: 500px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#link-search {
+  margin-top: 20px;
+  background-color: white;
+  border-bottom: 1px solid teal;
+  text-align: center;
+}
+
+.btn {
+    background-color: teal;
+    padding: 10px;
+    width: 100px;
+    color: #fff;
+}
+
+div#all-links {
+    width: 90%;
+    margin: 0 auto;
+    background-color: #f4f4f4;
+    padding: 20px;
+    margin-top: 25px;
+}
+
+.home-btn {
+  color: #fff;
+  width: 200px;
+  margin-top: 100px;
+}
+
+.new-acct-btn {
+  width: 400px;
+}
+
+.home-page-layout {
+    background-color: rgba(255,255,255,0.3);
+    padding: 44px;
+    width: 60%;
+    margin: 0 auto;
 }
