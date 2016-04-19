@@ -1,6 +1,6 @@
 <div class="link" data-id=<%= link.id %>>
-  Url: <span class="link-url-span"><%= link.url %></span><br>
-  Title: <span class="link-title-span"><%= link.title %></span><br>
+  <h3><%= link_to "#{link.title}", link.url, class: "link-title-span" %></h3>
+  <span class="link-url-span">(<%= link.url %>)</span><br>
   Status:
     <% if link.read == true %>
       <span class="status clickable-text"> Read </span>
